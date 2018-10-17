@@ -6,5 +6,5 @@
    - [**GitHub**](https://github.com/akella)
 
 
-- JailGeek - [**Generator**](akella-streams/dist) | [**Sources**](akella-streams)
+- JailGeek - [**Generator**](#) | [**Sources**](#)
    - [**VK**](https://vk.com/jailgeek)
