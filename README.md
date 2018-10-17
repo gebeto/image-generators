@@ -1,10 +1,10 @@
 # Generate images by code
 
 ## Generators
-- akella - [**Generator**](akella-streams/dist) | [**Sources**](akella-streams)
+- akella - [**Generator**](akella-streams/dist) - [**Sources**](akella-streams)
    - [**YouTube**](https://www.youtube.com/user/flintyara)
    - [**GitHub**](https://github.com/akella)
 
 
-- JailGeek - [**Generator**](#) | [**Sources**](#)
+- JailGeek - [**Generator**](#) - [**Sources**](#)
    - [**VK**](https://vk.com/jailgeek)
