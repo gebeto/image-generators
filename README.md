@@ -1,4 +1,4 @@
-# Generate images by code
+# Generate images using your browser
 
 ## Generators
 - akella - [**Generator**](akella-streams/dist) - [**Sources**](akella-streams)
