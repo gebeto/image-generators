@@ -1,3 +1,4 @@
 # Generate images by code
 
-- [x] - Akella streams thumbnail ([link](akella-streams/dist))
+### Akella
+  - ([Akella streams thumbnail](akella-streams/dist))
