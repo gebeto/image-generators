@@ -1,6 +1,16 @@
 # Generate images using your browser
 
-## Generators
-- [**Akella thumbnail**](akella-streams/dist)
-- [**JailGeek Post**](#)
-- [**JailGeek Wallpaper**](#)
+### Akella thumbnail [generator](akella-streams/dist)
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/13422799/47091136-efe5aa00-d22c-11e8-8c32-e572fa582f2e.png">
+</p>
+
+### Jailgeek news post [generator](*)
+<p align="center">
+  <img src="">
+</p>
+
+### Jailgeek wallpapers post [generator](*)
+<p align="center">
+  <img src="">
+</p>
