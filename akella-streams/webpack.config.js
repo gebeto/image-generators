@@ -2,7 +2,7 @@ const path = require("path");
 const webpackMerge = require("webpack-merge");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-const envConfig = (env) => require(`./configs/webpack.${env}.js`)(env);
+const envConfig = (env, root) => require(`./configs/webpack.${env}.js`)(env, root);
 
 const config = {
 	entry: path.resolve(__dirname, "src/index.tsx"),
@@ -62,4 +62,4 @@ const config = {
 	]
 };
 
-module.exports = (env) => webpackMerge(config, envConfig(env));
+module.exports = (env) => webpackMerge(config, envConfig(env, __dirname));
