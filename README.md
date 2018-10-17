@@ -1,10 +1,10 @@
 # Generate images using your browser
 
 ## Generators
-- akella - [**Generator**](akella-streams/dist)
+- [**akella**](akella-streams/dist)
    - [**YouTube**](https://www.youtube.com/user/flintyara)
    - [**GitHub**](https://github.com/akella)
 
 
-- JailGeek - [**Generator**](#)
+- [**JailGeek**](#)
    - [**VK**](https://vk.com/jailgeek)
