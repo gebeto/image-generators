@@ -1,6 +1,6 @@
 # Generate images using your browser
 
 ## Generators
-- [**akella**](akella-streams/dist)
+- [**Akella thumbnail**](akella-streams/dist)
 - [**JailGeek Post**](#)
 - [**JailGeek Wallpaper**](#)
