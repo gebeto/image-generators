@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as PIXI from 'pixi.js';
 
+import { debounce } from 'debounce';
+
 // import * as templateImageSrc from '../../assets/example.png';
 import * as templateImageSrc from '../../assets/template.png';
 import './styles.css';
@@ -32,23 +34,28 @@ function updateText(element: PIXI.Text, text: string, fontSize = 96) {
 	element.style.lineHeight = fontSize * 0.9;
 }
 
-
 export interface GeneratorProps {
 	leftText: string,
 	rightText: string,
 	leftFontSize: number,
 	rightFontSize: number,
 	screenshot: string,
-	templateImage: HTMLImageElement,
 }
 
 export default class Generator extends React.Component<GeneratorProps, any> {
 	canvas: HTMLCanvasElement;
+	canvas2: HTMLCanvasElement;
+	img: HTMLImageElement;
 	app: PIXI.Application;
 
 	screenshotElement: PIXI.Sprite;
 	leftTextElement: PIXI.Text;
 	rightTextElement: PIXI.Text;
+
+	updateImage = debounce(() => {
+		this.img.src = this.app.renderer.extract.base64(this.app.stage);
+		this.img.style.display = 'block';
+	}, 800)
 
 	componentWillUnmount() {
 		this.app && this.app.destroy();
@@ -56,7 +63,7 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 
 	componentDidMount() {
 		const { leftText, rightText } = this.props;
-		const roundTextAngle = - Math.PI / 90 * 6.7;
+		const roundTextAngle = -Math.PI / 90 * 6.7;
 
 		this.app = new PIXI.Application({
 			view: this.canvas,
@@ -65,6 +72,16 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 		});
 
 		const { stage } = this.app;
+
+		const bg = new PIXI.Graphics();
+		bg.beginFill(0x000000);
+		bg.moveTo(0, 0);
+		bg.lineTo(1280, 0);
+		bg.lineTo(1280, 720);
+		bg.lineTo(0, 720);
+		bg.lineTo(0, 0);
+		bg.endFill();
+		stage.addChild(bg);
 
 
 		this.screenshotElement = new PIXI.Sprite();
@@ -126,6 +143,8 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 	}
 
 	componentDidUpdate(oldProps) {
+		this.img.style.display = 'none';
+
 		const { leftText, leftFontSize, rightText, rightFontSize, screenshot } = this.props;
 		updateText(this.leftTextElement, leftText, leftFontSize);
 		updateText(this.rightTextElement, rightText, rightFontSize);
@@ -142,12 +161,15 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 				this.screenshotElement.scale.set(scale);
 			});
 		}
+
+		this.updateImage();
 	}
 
 	render() {
 		return (
-			<div className="canvas-wrapper">
+			<div className="canvas-wrapper mb-3 mt-3">
 				<canvas ref={canvas => this.canvas = canvas}></canvas>
+				<img width="1280" height="720" ref={img => this.img = img} />
 			</div>
 		);
 	}

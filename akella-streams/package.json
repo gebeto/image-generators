@@ -32,6 +32,7 @@
   "dependencies": {
     "@types/pixi.js": "^4.8.1",
     "@types/redux-form": "^7.4.9",
+    "debounce": "component/debounce",
     "html2canvas": "^1.0.0-alpha.12",
     "pixi.js": "^4.8.2",
     "react": "^16.4.1",

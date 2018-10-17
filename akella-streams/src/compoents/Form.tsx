@@ -34,7 +34,7 @@ const FileInput = (props) => {
 const InputForm = (props) => {
 	return (
 		<Form onSubmit={props.handleSubmit}>
-			<div className="input-group mb-3">
+			<div className="input-group mb-3 mt-3">
 				<Field component="textarea" type="text" name="left" placeholder="Left" className="form-control" />
 				<div className="input-group-append">
 					<div className="input-group-text">
@@ -43,7 +43,7 @@ const InputForm = (props) => {
 				</div>
 			</div>
 			
-			<div className="input-group mb-3">
+			<div className="input-group mb-3 mt-3">
 				<Field component="textarea" type="text" name="right" placeholder="Right" className="form-control" />
 				<div className="input-group-append">
 					<div className="input-group-text">
@@ -52,7 +52,7 @@ const InputForm = (props) => {
 				</div>
 			</div>
 
-			<div className="input-group mb-3">
+			<div className="input-group mb-3 mt-3">
 				<div className="input-group-prepend">
 					<label className="input-group-text" htmlFor="inputGroupFile01">Upload</label>
 				</div>
