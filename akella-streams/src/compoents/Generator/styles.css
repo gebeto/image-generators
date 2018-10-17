@@ -1,0 +1,11 @@
+.canvas-wrapper {
+	/*width: 100%;*/
+}
+
+.canvas-wrapper canvas {
+	/*width: 100%;*/
+	/*max-width: 800px;*/
+	max-width: 90%;
+	display: block;
+	margin: 0 auto;
+}
