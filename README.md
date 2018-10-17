@@ -1,3 +1,3 @@
 # Generate images by code
 
- - Akella streams thumbnail ([link](akella))
+ - [x] Akella streams thumbnail ([link](akella))
