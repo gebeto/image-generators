@@ -38,7 +38,7 @@ const InputForm = (props) => {
 				<Field component="textarea" type="text" name="left" placeholder="Left" className="form-control" />
 				<div className="input-group-append">
 					<div className="input-group-text">
-					<Field component="input" type="range" min="20" max="130" name="leftFontSize" />
+						Пост
 					</div>
 				</div>
 			</div>
@@ -47,18 +47,8 @@ const InputForm = (props) => {
 				<Field component="textarea" type="text" name="right" placeholder="Right" className="form-control" />
 				<div className="input-group-append">
 					<div className="input-group-text">
-					<Field component="input" type="range" min="20" max="130" name="rightFontSize" />
+						Тег
 					</div>
-				</div>
-			</div>
-
-			<div className="input-group mb-3 mt-3">
-				<div className="input-group-prepend">
-					<label className="input-group-text" htmlFor="inputGroupFile01">Upload</label>
-				</div>
-				<div className="custom-file">
-					<Field component={FileInput} name="screenshot" className="custom-file-input" id="inputGroupFile01" />
-					<label className="custom-file-label" htmlFor="inputGroupFile01">Screenshot</label>
 				</div>
 			</div>
 		</Form>

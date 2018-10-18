@@ -5,12 +5,8 @@ import { debounce } from 'debounce';
 
 // import * as templateImageSrc from '../../assets/example.png';
 import * as templateImageSrc from '../../assets/template.png';
+// import * as templateImageSrc from '../../assets/test.png';
 import './styles.css';
-
-
-function updateText(element: PIXI.Text, text: string, fontSize = 96) {
-	element.text = text.toUpperCase();
-}
 
 export interface GeneratorProps {
 	leftText: string,
@@ -45,22 +41,11 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 
 		this.app = new PIXI.Application({
 			view: this.canvas,
-			width: 1500,
-			height: 1000,
+			width: 2400,
+			height: 1600,
 		});
 
 		const { stage } = this.app;
-
-		const bg = new PIXI.Graphics();
-		bg.beginFill(0x000000);
-		bg.moveTo(0, 0);
-		bg.lineTo(1280, 0);
-		bg.lineTo(1280, 720);
-		bg.lineTo(0, 720);
-		bg.lineTo(0, 0);
-		bg.endFill();
-		stage.addChild(bg);
-
 
 		this.screenshotElement = new PIXI.Sprite();
 		this.screenshotElement.anchor.set(0.5);
@@ -76,49 +61,43 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 		templateImage.height = this.app.screen.height;
 		stage.addChild(templateImage);
 
-		// this.leftTextElement = createText(leftText, {
-		// 	x: 402,
-		// 	y: 555,
-		// 	rotation: roundTextAngle
-		// }, {
-		// 	wordWrap: true,
-		// 	wordWrapWidth: 800,
-		// });
-
-		const textStyle = new PIXI.TextStyle({
+		const leftTextStyle = new PIXI.TextStyle({
 			fontFamily: 'SF UI',
-			fontSize: 96,
-			fontWeight: '700',
+			fontSize: 190,
+			fontWeight: '900',
 			fill: '#3C4D60',
-			// fill: 'red',
-			letterSpacing: -2.0,
+			letterSpacing: 1.5,
 			align: 'left',
-			lineHeight: 96 / 0.9,
+			lineHeight: 232,
+		});
+		this.leftTextElement = new PIXI.Text(leftText, leftTextStyle);
+		this.leftTextElement.x = 160;
+		this.leftTextElement.y = 215;
+		stage.addChild(this.leftTextElement);
+
+		const rightTextStyle = new PIXI.TextStyle({
+			fontFamily: 'SF UI',
+			fontSize: 158,
+			fontWeight: '900',
+			fill: '#3C4D60',
+			letterSpacing: -1.5,
+			align: 'left',
+			// lineHeight: 96 / 0.9,
 			// wordWrap: true,
 			// wordWrapWidth: 400,
 		});
-		this.leftTextElement = new PIXI.Text(leftText, textStyle);
-		this.leftTextElement.anchor.y = 0.5;
-		this.leftTextElement.x = 370;
-		this.leftTextElement.y = 1300;
-		stage.addChild(this.leftTextElement);
-
-		// this.rightTextElement = createText(leftText, {
-		// 	x: 1000,
-		// 	y: 507,
-		// 	rotation: roundTextAngle
-		// }, {
-		// 	wordWrap: true,
-		// 	wordWrapWidth: 400,
-		// });
-		// stage.addChild(this.rightTextElement);
+		this.rightTextElement = new PIXI.Text(leftText, rightTextStyle);
+		this.rightTextElement.anchor.y = 0.5;
+		this.rightTextElement.x = 360;
+		this.rightTextElement.y = 1297;
+		stage.addChild(this.rightTextElement);
 	}
 
 	componentDidUpdate(oldProps) {
 		this.img.style.display = 'none';
-
 		const { leftText, rightText, screenshot } = this.props;
-		updateText(this.leftTextElement, leftText);
+		this.leftTextElement.text = leftText;
+		this.rightTextElement.text = rightText.toUpperCase();
 		this.updateImage();
 	}
 
@@ -126,7 +105,7 @@ export default class Generator extends React.Component<GeneratorProps, any> {
 		return (
 			<div className="canvas-wrapper mb-3 mt-3">
 				<canvas ref={canvas => this.canvas = canvas}></canvas>
-				<img width="1500" height="1000" ref={img => this.img = img} />
+				<img width="2400" height="1600" ref={img => this.img = img} />
 			</div>
 		);
 	}

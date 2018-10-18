@@ -11,12 +11,6 @@ import './assets/styles.css';
 import * as templateImageSrc from './assets/template.png';
 
 
-const templateImage: HTMLImageElement = document.createElement("img");
-templateImage.addEventListener('load', function(e) {
-	store.dispatch({type: "SET_TEMPLATE_IMAGE", payload: templateImage});
-});
-templateImage.src = templateImageSrc as any;
-
 (window as any).store = store;
 
 
