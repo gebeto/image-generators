@@ -1,0 +1,19 @@
+.canvas-wrapper {
+	/*width: 100%;*/
+	/*margin: 0 auto;*/
+	position: relative;
+}
+
+.canvas-wrapper canvas {
+	width: 100%;
+	display: block;
+}
+
+.canvas-wrapper img {
+	width: 100%;
+	height: auto;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}

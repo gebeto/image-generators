@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+@font-face {
+	font-family: SF UI;
+	src: url(SFUIDisplay-Heavy.otf);
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: SF UI;
+	src: url(SFUIDisplay-Bold.otf);
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: SF UI;
+	src: url(SFUIDisplay-Black.otf);
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: Archive;
+	src: url(Archive.otf);
+}
